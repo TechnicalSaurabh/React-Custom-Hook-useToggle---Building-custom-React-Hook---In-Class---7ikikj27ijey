@@ -1,7 +1,9 @@
 import React,{useCallback,useState} from 'react'
 
-const useToggle = () => {
-   
+const useToggle = (initialState) => {
+  const [state, setState] = useState(initialState);
+  const toggle = () => setState(!state);
+  return [state, toggle];
   
   }
   export default useToggle;
